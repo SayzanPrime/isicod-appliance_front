@@ -1,0 +1,23 @@
+<div class="modal-header" style="background-color:#7987a1;">
+    <h5 class="modal-title" id="exampleModalLabel" style="color:white;">Update Type Appliance</h5>
+    <button type="button" class="close" (click)="closeModal()" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="typeApplianceForm" (ngSubmit)="updateTypeAppliance()">
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Libelle</label>
+        <div class="col-sm-9">
+          <div class="input-group">
+              <input type="text" placeholder="Libelle" class="form-control" formControlName="libelle">
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancel</button>
+        <button type="submit" class="btn btn-primary">Update</button>
+      </div>
+    </form>
+</div>

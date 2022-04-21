@@ -1,0 +1,51 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink=".">Users</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Students</li>
+    </ol>
+</nav>
+
+<!-- Table -->
+<div class="row">
+    <div class="col-md-12 stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-title">Students</h6>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>First Name</th>
+                          <th>Last NAME</th>
+                          <th>Cycle</th>
+                          <th>Group</th>
+                          <th>email</th>
+                          <th>Birth Date</th>
+                          <th>Birth Place</th>
+                          <th>Phone Number</th>
+                          <th>Address</th>
+                          <th>Parent</th>
+                          <th>#</th>
+                        </tr>
+                      </thead>
+                      <tbody *ngFor="let row of students">
+                        <tr>
+                          <th>{{row.first_name}}</th>
+                          <td>{{row.last_name}}</td>
+                          <td>{{row.cycle_id}}</td>
+                          <td>{{row.group_id}}</td>
+                          <th>{{row.email}}</th>
+                          <td>{{row.birth_date}}</td>
+                          <td>{{row.birth_place}}</td>
+                          <td>{{row.phone_number}}</td>
+                          <th>{{row.address}}</th>
+                          <td>{{row.parent_id}}</td>
+                          <td (click)="studentDetail(row.user_id)">Details</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>

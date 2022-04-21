@@ -1,0 +1,59 @@
+<div class="modal-header" style="background-color:#7987a1;">
+    <h5 class="modal-title" id="exampleModalLabel" style="color:white;">New Appliance</h5>
+    <button type="button" class="close" (click)="closeModal()" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="applianceForm" (ngSubmit)="saveAppliance()">
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Libelle</label>
+        <div class="col-sm-9">
+          <div class="input-group">
+              <input type="text" placeholder="Libelle" class="form-control" formControlName="libelle">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Dbid</label>
+        <div class="col-sm-9">
+          <div class="input-group">
+              <input type="text" placeholder="Dbid" class="form-control" formControlName="dbid">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Disponibilite</label>
+        <div class="col-sm-9">
+          <div class="input-group">
+              <input type="text" placeholder="Disponibilite" class="form-control" formControlName="disponibilite">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Reference</label>
+        <div class="col-sm-9">
+          <div class="input-group">
+              <input type="text" placeholder="Reference" class="form-control" formControlName="ref">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Type</label>
+        <div class="col-sm-9">
+            <ng-select placeholder="Type Appliance" [items]="typeAppliances" bindLabel="libelle"
+                formControlName="typeApplianceDto">
+            </ng-select>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancel</button>
+        <button type="submit" class="btn btn-primary">Add</button>
+      </div>
+    </form>
+</div>

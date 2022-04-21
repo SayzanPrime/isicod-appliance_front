@@ -1,0 +1,42 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink=".">Back Office</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Type Appliance</li>
+    </ol>
+</nav>
+
+<!-- Table -->
+<div class="row">
+    <div class="col-md-12 stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-title">Type Appliance</h6>
+                <hr>
+                <button type="button" class="btn btn-secondary" (click)="newTypeAppliance()">Add Type Appliance</button>
+                <hr>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                            <th style="width: 33%;">Id</th>
+                            <th style="width: 33%;">Libelle</th>
+                            <th style="width: 33%; text-align:center;">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody *ngFor="let typeAppliance of typeAppliances">
+                        <tr>
+                            <th>{{typeAppliance.id}}</th>
+                            <th>{{typeAppliance.libelle}}</th>
+                          
+                            <th style="text-align:center;">
+                                <button class="btn btn-primary" (click)="updateTypeAppliance(typeAppliance)">Edit</button>&nbsp;
+                                <button class="btn btn-danger" (click)="deleteTypeAppliance(typeAppliance.id)">Delete</button>
+                            </th>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
